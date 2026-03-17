@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Job | Volt & Flow | Rockville MD</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--black:#0a0a0a;--dark:#111;--card:#181818;--card2:#1e1e1e;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--yellow:#F5C400;--yellow2:#FFD740;--yellow-dim:rgba(245,196,0,0.12);--green:#22c55e;--text:#E8E4DC;--muted:#6a6560;--muted2:#3a3530;--cream:#F4F0E8;--white:#FEFCF8;}
+html{scroll-behavior:smooth;}body{background:var(--black);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:10px;}
+.nav-logo-mark{width:32px;height:32px;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#000;}
+.nav-links{display:flex;align-items:center;gap:28px;}.nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;transition:color 0.2s;}.nav-links a:hover,.nav-links a.active{color:var(--yellow);}
+.nav-cta{background:var(--yellow);color:#000;padding:10px 22px;font-size:13px;font-weight:700;text-decoration:none;}
+.page-hero{padding:140px 48px 72px;background:var(--dark);position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+.page-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 40px,rgba(245,196,0,0.025) 40px,rgba(245,196,0,0.025) 41px);pointer-events:none;}
+.ph-glow{position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(245,196,0,0.07) 0%,transparent 65%);pointer-events:none;}
+.ph-z{position:relative;z-index:1;}
+.ph-ey{display:flex;align-items:center;gap:12px;margin-bottom:14px;}.ph-l{width:28px;height:2px;background:var(--yellow);}.ph-t{font-size:10px;letter-spacing:0.35em;color:var(--yellow);text-transform:uppercase;font-weight:600;}
+.ph-h{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,8vw,96px);font-weight:900;color:var(--white);line-height:0.92;text-transform:uppercase;margin-bottom:16px;}.ph-h em{font-style:italic;color:var(--yellow);}
+.ph-s{font-size:16px;color:var(--muted);max-width:520px;line-height:1.8;}
+.emergency{background:var(--yellow);padding:14px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.em-text{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:#000;text-transform:uppercase;display:flex;align-items:center;gap:12px;}
+.em-dot{width:8px;height:8px;background:#000;border-radius:50%;animation:blink 1s infinite;}@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.em-phone{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:#000;text-decoration:none;}
+section{padding:88px 48px;}
+.bl{display:grid;grid-template-columns:1fr 400px;gap:48px;align-items:start;margin-top:0;}
+.bfw{background:var(--card);border:1px solid var(--border);overflow:hidden;}
+.bt{background:var(--yellow);padding:22px 28px;display:flex;align-items:center;justify-content:space-between;}
+.bt-t{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:#000;text-transform:uppercase;}
+.bt-n{font-size:12px;color:rgba(0,0,0,0.6);}
+.bf{padding:28px 32px;}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.ff{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.ff label{font-size:10px;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;font-weight:600;}
+.ff input,.ff select,.ff textarea{background:#0d0d0d;border:1px solid var(--border2);color:var(--text);padding:12px 14px;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;transition:border-color 0.2s;width:100%;}
+.ff input:focus,.ff select:focus,.ff textarea:focus{border-color:var(--yellow);}
+.ff select option{background:#1a1a1a;}.ff textarea{resize:vertical;min-height:90px;}
+.fsub{width:100%;background:var(--yellow);color:#000;padding:16px;font-size:15px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border:none;cursor:pointer;margin-top:4px;}
+.fsub:hover{background:var(--yellow2);}
+.sb{display:flex;flex-direction:column;gap:2px;}
+.sc{background:var(--card);border:1px solid var(--border);padding:22px 24px;transition:border-color 0.2s;}.sc:hover{border-color:var(--border2);}
+.sc-ico{font-size:22px;margin-bottom:10px;display:block;}
+.sc-l{font-size:10px;letter-spacing:0.2em;color:var(--yellow);text-transform:uppercase;font-weight:600;margin-bottom:5px;}
+.sc-v{font-size:15px;font-weight:600;color:var(--white);margin-bottom:3px;}
+.sc-a{font-size:15px;font-weight:600;color:var(--yellow);text-decoration:none;}
+.sc-a:hover{text-decoration:underline;}
+.sc-s{font-size:12px;color:var(--muted);}
+.hg{display:flex;flex-direction:column;gap:0;}
+.hr{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.hr:last-child{border-bottom:none;}
+.hr-d{color:var(--muted);}.hr-t{color:var(--text);font-weight:500;}.hr-t.open{color:var(--green);}
+.faq-list{display:flex;flex-direction:column;gap:2px;margin-top:48px;}
+.faq-item{background:var(--card);border:1px solid var(--border);overflow:hidden;}
+.faq-q{padding:18px 22px;font-size:14px;font-weight:500;color:var(--cream);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background 0.2s;}
+.faq-q:hover{background:var(--card2);}
+.faq-a{padding:0 22px;font-size:13px;color:var(--muted);line-height:1.75;max-height:0;overflow:hidden;transition:max-height 0.3s,padding 0.3s;}
+.faq-a.open{max-height:200px;padding:0 22px 18px;}
+.faq-icon{color:var(--yellow);font-size:18px;transition:transform 0.3s;}
+.faq-icon.open{transform:rotate(45deg);}
+.se-r{display:flex;align-items:center;gap:12px;margin-bottom:14px;}.se-l{width:28px;height:2px;background:var(--yellow);}.se-t{font-size:10px;letter-spacing:0.35em;color:var(--yellow);text-transform:uppercase;font-weight:600;}
+.sh{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,60px);font-weight:800;color:var(--white);line-height:0.95;text-transform:uppercase;margin-bottom:14px;}.sh em{font-style:italic;color:var(--yellow);}
+footer{background:var(--dark);border-top:1px solid var(--border);padding:48px;}
+.fi{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;margin-bottom:40px;}
+.fl{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;color:var(--white);text-transform:uppercase;margin-bottom:4px;}.fl span{color:var(--yellow);}
+.ft{font-size:12px;color:var(--muted);}
+.fc h4{font-size:10px;letter-spacing:0.2em;color:var(--muted);text-transform:uppercase;font-weight:600;margin-bottom:14px;}
+.fc a{display:block;font-size:13px;color:var(--muted);text-decoration:none;margin-bottom:8px;}.fc a:hover{color:var(--yellow);}
+.fb{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.fb div{font-size:11px;color:var(--muted2);}.fb a{color:var(--muted);text-decoration:none;}.fb a:hover{color:var(--yellow);}
+.chat-bubble{position:fixed;bottom:28px;right:28px;z-index:500;}
+.chat-toggle{width:60px;height:60px;background:var(--yellow);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 24px rgba(245,196,0,0.25);}
+.chat-window{position:absolute;bottom:72px;right:0;width:340px;background:var(--dark);border:1px solid var(--border2);display:none;flex-direction:column;overflow:hidden;}
+.chat-window.open{display:flex;}
+.chat-head{background:var(--yellow);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.ch-info{display:flex;align-items:center;gap:10px;}.ch-av{width:36px;height:36px;background:#000;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.ch-n{font-size:14px;font-weight:700;color:#000;}.ch-st{font-size:10px;color:rgba(0,0,0,0.6);}
+.ch-cl{background:none;border:none;cursor:pointer;font-size:18px;color:#000;opacity:0.6;}
+.chat-msgs{height:280px;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;}
+.msg{max-width:82%;padding:10px 14px;font-size:13px;line-height:1.55;}
+.msg.bot{background:var(--card2);border:1px solid var(--border);color:var(--text);align-self:flex-start;}
+.msg.user{background:var(--yellow);color:#000;align-self:flex-end;font-weight:500;}
+.sugg{padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid var(--border);}
+.sg2{background:transparent;border:1px solid var(--border2);color:var(--text);padding:5px 10px;font-size:11px;cursor:pointer;transition:all 0.2s;}
+.sg2:hover{border-color:var(--yellow);color:var(--yellow);}
+.ci-row{display:flex;border-top:1px solid var(--border);}
+.ci-inp{flex:1;background:transparent;border:none;color:var(--text);padding:12px 16px;font-size:13px;outline:none;}
+.ci-inp::placeholder{color:var(--muted);}
+.ci-send{background:var(--yellow);border:none;width:44px;cursor:pointer;font-size:16px;}
+@media(max-width:900px){nav{padding:0 20px;}.nav-links{display:none;}.page-hero{padding:100px 20px 48px;}.emergency{padding:14px 20px;}section{padding:56px 20px;}.bl{grid-template-columns:1fr;}.fr{grid-template-columns:1fr;}.bf{padding:20px;}footer{padding:32px 20px;}.fi{flex-direction:column;gap:24px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html"><div class="nav-logo-mark">V</div>VOLT &amp; FLOW</a>
+  <div class="nav-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About Us</a><a href="area.html">Service Area</a><a href="booking.html" class="active">Book Now</a></div>
+  <a class="nav-cta" href="booking.html">Free Quote</a>
+</nav>
+<div class="page-hero">
+  <div class="ph-glow"></div>
+  <div class="ph-z">
+    <div class="ph-ey"><div class="ph-l"></div><div class="ph-t">Get Started</div></div>
+    <h1 class="ph-h">Book a<br><em>Free Quote</em></h1>
+    <p class="ph-s">Tell us what you need and we respond within the hour. No commitment — just a fair price before any work starts.</p>
+  </div>
+</div>
+<div class="emergency"><div class="em-text"><div class="em-dot"></div>Emergency? Don't fill out a form — call us now</div><a class="em-phone" href="tel:3015550187">(301) 555-0187</a></div>
+<section>
+  <div class="bl">
+    <div class="bfw">
+      <div class="bt"><div class="bt-t">Request Service</div><div class="bt-n">We respond within 60 minutes</div></div>
+      <div class="bf" id="fa">
+        <div class="fr">
+          <div class="ff"><label>First Name</label><input type="text" placeholder="John"></div>
+          <div class="ff"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+        </div>
+        <div class="fr">
+          <div class="ff"><label>Phone Number</label><input type="tel" placeholder="(301) 555-0000"></div>
+          <div class="ff"><label>Email Address</label><input type="email" placeholder="john@email.com"></div>
+        </div>
+        <div class="ff"><label>Street Address</label><input type="text" placeholder="123 Main St, Rockville MD"></div>
+        <div class="fr">
+          <div class="ff"><label>Service Type</label>
+            <select>
+              <option>Select a service…</option>
+              <optgroup label="Plumbing"><option>Plumbing — Leak or Pipe</option><option>Plumbing — Drain Cleaning</option><option>Plumbing — Water Heater</option><option>Plumbing — Toilet or Fixture</option></optgroup>
+              <optgroup label="Electrical"><option>Electrical — Outlets or Switches</option><option>Electrical — Panel or Breaker</option><option>Electrical — Lighting or Fans</option><option>Electrical — EV Charger</option></optgroup>
+              <optgroup label="Other"><option>Emergency — Need Help Now</option><option>Home Inspection</option><option>Not Sure — Need Diagnosis</option></optgroup>
+            </select>
+          </div>
+          <div class="ff"><label>Preferred Date</label><input type="date"></div>
+        </div>
+        <div class="fr">
+          <div class="ff"><label>Preferred Time</label><select><option>Morning (8am–12pm)</option><option>Afternoon (12pm–5pm)</option><option>Evening (5pm–8pm)</option><option>Any time works</option></select></div>
+          <div class="ff"><label>How Did You Hear About Us?</label><select><option>Google Search</option><option>Google Maps</option><option>Friend or Neighbor</option><option>Nextdoor</option><option>Other</option></select></div>
+        </div>
+        <div class="ff"><label>Describe the Issue</label><textarea placeholder="Give us as much detail as you have — what's happening, how long it's been going on, anything you've already tried."></textarea></div>
+        <button class="fsub" onclick="sub()">→ Request My Free Quote</button>
+      </div>
+    </div>
+    <div class="sb">
+      <div class="sc"><span class="sc-ico">📞</span><div class="sc-l">Phone</div><a class="sc-a" href="tel:3015550187">(301) 555-0187</a><div class="sc-s">Fastest for emergencies and same-day bookings</div></div>
+      <div class="sc"><span class="sc-ico">✉️</span><div class="sc-l">Email</div><a class="sc-a" href="mailto:hello@voltandflow.com">hello@voltandflow.com</a><div class="sc-s">We respond within 2 hours during business hours</div></div>
+      <div class="sc"><span class="sc-ico">📍</span><div class="sc-l">Based In</div><div class="sc-v">Rockville, MD 20850</div><div class="sc-s">Serving all of Montgomery County</div></div>
+      <div class="sc"><span class="sc-ico">🕐</span><div class="sc-l">Hours</div>
+        <div class="hg">
+          <div class="hr"><span class="hr-d">Mon–Fri</span><span class="hr-t open">7am–8pm</span></div>
+          <div class="hr"><span class="hr-d">Saturday</span><span class="hr-t open">8am–6pm</span></div>
+          <div class="hr"><span class="hr-d">Sunday</span><span class="hr-t open">9am–4pm</span></div>
+          <div class="hr"><span class="hr-d">Emergency</span><span class="hr-t open">24/7 Always</span></div>
+        </div>
+      </div>
+      <div class="sc" style="background:var(--yellow-dim);border-color:rgba(245,196,0,0.25);">
+        <div class="sc-l">Same-Day Service</div>
+        <div class="sc-v" style="color:var(--yellow);">Book Before Noon</div>
+        <div class="sc-s">Request by 12pm and we can often dispatch same day across our full service area.</div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:64px;">
+    <div class="se-r"><div class="se-l"></div><div class="se-t">Common Questions</div></div>
+    <h2 class="sh">Before You<br><em>Book</em></h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Do you give free estimates?</span><span class="faq-icon">+</span></div><div class="faq-a">Yes — all estimates are completely free. We come out, assess the job, and give you a flat-rate quote before any work starts. You are never obligated to proceed.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>How quickly can you come out?</span><span class="faq-icon">+</span></div><div class="faq-a">Same-day available if you book before noon. Most non-emergency jobs scheduled within 1–2 days. Emergency calls get a 45-minute average response, 24/7.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Do you charge hourly or flat rate?</span><span class="faq-icon">+</span></div><div class="faq-a">Flat rate, always. We quote the full price before we start. No hourly surprises — what we quote is what you pay, even if the job takes longer.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Are you licensed and insured?</span><span class="faq-icon">+</span></div><div class="faq-a">Yes. Maryland Master Plumber #4821 and Journeyman Electrician #7304. We carry $2M liability insurance and worker's comp on every job.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>What if something goes wrong after the job?</span><span class="faq-icon">+</span></div><div class="faq-a">Every job comes with a 1-year workmanship guarantee. If anything we fixed stops working within a year, we come back and fix it free.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Do you do both plumbing AND electrical?</span><span class="faq-icon">+</span></div><div class="faq-a">Yes — both under one roof. One call for jobs that involve both trades, like bathroom remodels, kitchen updates, or whole-home inspections.</div></div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="fi">
+    <div><div class="fl">Volt <span>&amp;</span> Flow</div><div class="ft">Licensed Plumbing &amp; Electrical · Rockville MD</div></div>
+    <div class="fc"><h4>Pages</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About Us</a><a href="area.html">Service Area</a><a href="booking.html">Book Now</a></div>
+    <div class="fc"><h4>Contact</h4><a href="tel:3015550187">(301) 555-0187</a><a href="mailto:hello@voltandflow.com">hello@voltandflow.com</a></div>
+  </div>
+  <div class="fb"><div>© 2025 Volt &amp; Flow Home Services</div><div>Website &amp; AI by <a href="https://aimplify.one">Aimplify</a></div></div>
+</footer>
+<div class="chat-bubble">
+  <div class="chat-window" id="cw">
+    <div class="chat-head"><div class="ch-info"><div class="ch-av">⚡</div><div><div class="ch-n">Volt &amp; Flow AI</div><div class="ch-st">Online · Replies instantly</div></div></div><button class="ch-cl" onclick="tc()">✕</button></div>
+    <div class="chat-msgs" id="cm"></div>
+    <div class="sugg" id="sg"><button class="sg2" onclick="q('Same-day available?')">Same-day?</button><button class="sg2" onclick="q('How much will it cost?')">Pricing</button><button class="sg2" onclick="q('I have an emergency')">Emergency</button></div>
+    <div class="ci-row"><input class="ci-inp" id="inp" placeholder="Questions about booking…" onkeydown="if(event.key==='Enter')snd()"><button class="ci-send" onclick="snd()">→</button></div>
+  </div>
+  <button class="chat-toggle" id="ct" onclick="tc()">⚡</button>
+</div>
+<script>
+function sub(){document.getElementById('fa').innerHTML='<div style="padding:48px 32px;text-align:center;"><div style="font-size:48px;margin-bottom:20px;">✓</div><div style="font-family:Barlow Condensed,sans-serif;font-size:32px;font-weight:800;color:#F4F0E8;text-transform:uppercase;margin-bottom:12px;">Quote Request Sent!</div><div style="font-size:14px;color:#6a6560;line-height:1.75;">We will call or text you within the hour to confirm your appointment. For emergencies call <a href="tel:3015550187" style="color:#F5C400;">(301) 555-0187</a> directly.</div></div>';}
+function faq(el){const a=el.nextElementSibling;const ic=el.querySelector('.faq-icon');const open=a.classList.toggle('open');ic.classList.toggle('open',open);ic.textContent=open?'×':'+';}
+let o=false;
+function tc(){o=!o;document.getElementById('cw').classList.toggle('open',o);document.getElementById('ct').textContent=o?'✕':'⚡';if(o&&!document.getElementById('cm').children.length)setTimeout(()=>bot("Hi! Need help booking? I'm here."),400);}
+function msg(t,tp){const c=document.getElementById('cm');const d=document.createElement('div');d.className='msg '+tp;d.textContent=t;c.appendChild(d);c.scrollTop=c.scrollHeight;}
+function bot(t){const c=document.getElementById('cm');const tp=document.createElement('div');tp.className='msg bot';tp.textContent='...';c.appendChild(tp);c.scrollTop=c.scrollHeight;setTimeout(()=>{c.removeChild(tp);msg(t,'bot');},900);}
+function snd(){const i=document.getElementById('inp');const t=i.value.trim();if(!t)return;msg(t,'user');i.value='';document.getElementById('sg').style.display='none';r(t.toLowerCase());}
+function q(t){msg(t,'user');document.getElementById('sg').style.display='none';r(t.toLowerCase());}
+function r(t){
+  if(t.includes('same')||t.includes('today'))bot("Same-day available if you book before noon. Call (301) 555-0187 to confirm same-day availability.");
+  else if(t.includes('price')||t.includes('cost'))bot("All flat-rate. Plumbing from $95, electrical from $110, emergency $145. Free estimate on every job.");
+  else if(t.includes('emergency'))bot("For emergencies call us directly at (301) 555-0187. We're available 24/7, 45-min average response.");
+  else bot("Fill out the form above and we'll respond within the hour. Or call (301) 555-0187 directly.");
+}
+</script>
+</body>
+</html>

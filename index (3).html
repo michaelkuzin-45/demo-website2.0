@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volt & Flow | Plumbing & Electrical | Rockville MD</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--black:#0a0a0a;--dark:#111;--card:#181818;--card2:#1e1e1e;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--yellow:#F5C400;--yellow2:#FFD740;--yellow-dim:rgba(245,196,0,0.12);--yellow-dim2:rgba(245,196,0,0.05);--green:#22c55e;--text:#E8E4DC;--muted:#6a6560;--muted2:#3a3530;--cream:#F4F0E8;--white:#FEFCF8;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;letter-spacing:0.04em;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:10px;}
+.nav-logo-mark{width:32px;height:32px;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#000;flex-shrink:0;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--yellow);}
+.nav-cta{background:var(--yellow);color:#000;padding:10px 22px;font-size:13px;font-weight:700;letter-spacing:0.05em;border:none;cursor:pointer;text-decoration:none;transition:background 0.2s;}
+.nav-cta:hover{background:var(--yellow2);}
+.hero{min-height:100vh;padding:140px 48px 80px;position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 40px,rgba(245,196,0,0.025) 40px,rgba(245,196,0,0.025) 41px);pointer-events:none;}
+.hero-glow{position:absolute;top:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(245,196,0,0.08) 0%,transparent 65%);pointer-events:none;}
+.hero-content{position:relative;z-index:1;max-width:700px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--yellow-dim);border:1px solid rgba(245,196,0,0.3);padding:8px 16px;margin-bottom:28px;}
+.hb-dot{width:6px;height:6px;background:var(--yellow);border-radius:50%;animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.hb-text{font-size:11px;font-weight:600;letter-spacing:0.2em;color:var(--yellow);text-transform:uppercase;}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(64px,10vw,128px);font-weight:900;line-height:0.88;letter-spacing:-0.01em;color:var(--white);margin-bottom:24px;text-transform:uppercase;}
+.hero-title .accent{color:var(--yellow);}
+.hero-title .italic{font-style:italic;}
+.hero-sub{font-size:17px;color:var(--muted);max-width:500px;line-height:1.75;margin-bottom:40px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:52px;}
+.btn-primary{background:var(--yellow);color:#000;padding:16px 32px;font-size:14px;font-weight:700;letter-spacing:0.05em;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:background 0.2s;text-transform:uppercase;}
+.btn-primary:hover{background:var(--yellow2);}
+.btn-secondary{background:transparent;color:var(--text);padding:15px 32px;font-size:14px;font-weight:500;border:1px solid var(--border2);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all 0.2s;}
+.btn-secondary:hover{border-color:var(--yellow);color:var(--yellow);}
+.hero-stats{display:inline-flex;border:1px solid var(--border);}
+.hstat{padding:18px 28px;border-right:1px solid var(--border);text-align:center;}
+.hstat:last-child{border-right:none;}
+.hstat-num{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;color:var(--yellow);line-height:1;margin-bottom:2px;}
+.hstat-label{font-size:10px;letter-spacing:0.12em;color:var(--muted);text-transform:uppercase;}
+.hero-right{position:absolute;right:0;top:0;bottom:0;width:42%;overflow:hidden;}
+.hero-visual{width:100%;height:100%;background:linear-gradient(135deg,#111 0%,#1a1400 100%);display:flex;align-items:center;justify-content:center;position:relative;}
+.hero-visual::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(245,196,0,0.03) 0,rgba(245,196,0,0.03) 1px,transparent 1px,transparent 60px),repeating-linear-gradient(0deg,rgba(245,196,0,0.03) 0,rgba(245,196,0,0.03) 1px,transparent 1px,transparent 60px);}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:40px;position:relative;z-index:1;width:100%;}
+.svc-card{background:rgba(255,255,255,0.04);border:1px solid var(--border);padding:28px 20px;text-align:center;transition:all 0.3s;}
+.svc-card:hover{background:var(--yellow-dim);border-color:rgba(245,196,0,0.3);}
+.svc-card .icon{font-size:36px;margin-bottom:10px;display:block;}
+.svc-card .lbl{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;color:var(--cream);letter-spacing:0.05em;text-transform:uppercase;}
+.emergency{background:var(--yellow);padding:14px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.em-text{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:#000;letter-spacing:0.04em;text-transform:uppercase;display:flex;align-items:center;gap:12px;}
+.em-dot{width:8px;height:8px;background:#000;border-radius:50%;animation:blink 1s infinite;}
+.em-phone{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:#000;text-decoration:none;}
+.em-phone:hover{opacity:0.75;}
+section{padding:88px 48px;}
+.section-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.se-line{width:28px;height:2px;background:var(--yellow);}
+.se-text{font-size:10px;letter-spacing:0.35em;color:var(--yellow);text-transform:uppercase;font-weight:600;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,60px);font-weight:800;color:var(--white);line-height:0.95;letter-spacing:-0.01em;text-transform:uppercase;margin-bottom:14px;}
+.section-title em{font-style:italic;color:var(--yellow);}
+.section-sub{font-size:15px;color:var(--muted);max-width:480px;line-height:1.8;}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:52px;}
+.proc-step{background:var(--card);border:1px solid var(--border);padding:28px 24px;position:relative;overflow:hidden;}
+.proc-step::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.proc-step:hover::after{transform:scaleX(1);}
+.ps-num{font-family:'Barlow Condensed',sans-serif;font-size:60px;font-weight:900;color:rgba(245,196,0,0.07);line-height:1;margin-bottom:12px;}
+.ps-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--white);text-transform:uppercase;margin-bottom:8px;}
+.ps-desc{font-size:12px;color:var(--muted);line-height:1.7;}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px;}
+.review-card{background:var(--card);border:1px solid var(--border);padding:28px;transition:border-color 0.2s;}
+.review-card:hover{border-color:var(--border2);}
+.rc-stars{color:var(--yellow);font-size:14px;margin-bottom:12px;}
+.rc-text{font-size:13px;color:var(--text);line-height:1.75;margin-bottom:16px;font-style:italic;}
+.rc-author{font-size:12px;font-weight:600;color:var(--cream);}
+.rc-location{font-size:11px;color:var(--muted);}
+.cta-band{background:var(--yellow);padding:72px 48px;text-align:center;}
+.cta-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,6vw,72px);font-weight:900;color:#000;text-transform:uppercase;line-height:0.95;margin-bottom:16px;}
+.cta-sub{font-size:16px;color:rgba(0,0,0,0.6);max-width:420px;margin:0 auto 32px;line-height:1.7;}
+.cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-dark{background:#000;color:var(--yellow);padding:15px 32px;font-size:14px;font-weight:700;letter-spacing:0.05em;text-decoration:none;text-transform:uppercase;transition:opacity 0.2s;}
+.btn-dark:hover{opacity:0.8;}
+.btn-outline-dark{background:transparent;color:#000;padding:14px 32px;font-size:14px;font-weight:600;border:2px solid #000;text-decoration:none;text-transform:uppercase;transition:all 0.2s;}
+.btn-outline-dark:hover{background:#000;color:var(--yellow);}
+footer{background:var(--dark);border-top:1px solid var(--border);padding:48px;}
+.footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;margin-bottom:40px;}
+.footer-logo{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;color:var(--white);text-transform:uppercase;margin-bottom:4px;}
+.footer-logo span{color:var(--yellow);}
+.footer-tagline{font-size:12px;color:var(--muted);}
+.footer-col h4{font-size:10px;letter-spacing:0.2em;color:var(--muted);text-transform:uppercase;font-weight:600;margin-bottom:14px;}
+.footer-col a{display:block;font-size:13px;color:var(--muted);text-decoration:none;margin-bottom:8px;transition:color 0.2s;}
+.footer-col a:hover{color:var(--yellow);}
+.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:11px;color:var(--muted2);}
+.footer-credit{font-size:11px;color:var(--muted2);}
+.footer-credit a{color:var(--muted);text-decoration:none;}
+.footer-credit a:hover{color:var(--yellow);}
+.chat-bubble{position:fixed;bottom:28px;right:28px;z-index:500;}
+.chat-toggle{width:60px;height:60px;background:var(--yellow);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 24px rgba(245,196,0,0.25);transition:transform 0.2s,background 0.2s;}
+.chat-toggle:hover{transform:scale(1.05);background:var(--yellow2);}
+.chat-window{position:absolute;bottom:72px;right:0;width:340px;background:var(--dark);border:1px solid var(--border2);display:none;flex-direction:column;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,0.6);}
+.chat-window.open{display:flex;}
+.chat-head{background:var(--yellow);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.ch-info{display:flex;align-items:center;gap:10px;}
+.ch-avatar{width:36px;height:36px;background:#000;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.ch-name{font-size:14px;font-weight:700;color:#000;}
+.ch-status{font-size:10px;color:rgba(0,0,0,0.6);}
+.ch-close{background:none;border:none;cursor:pointer;font-size:18px;color:#000;opacity:0.6;padding:0 4px;}
+.chat-msgs{height:280px;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;}
+.msg{max-width:82%;padding:10px 14px;font-size:13px;line-height:1.55;}
+.msg.bot{background:var(--card2);border:1px solid var(--border);color:var(--text);align-self:flex-start;}
+.msg.user{background:var(--yellow);color:#000;align-self:flex-end;font-weight:500;}
+.chat-suggestions{padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid var(--border);}
+.suggestion{background:transparent;border:1px solid var(--border2);color:var(--text);padding:5px 10px;font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;}
+.suggestion:hover{border-color:var(--yellow);color:var(--yellow);}
+.chat-input-row{display:flex;border-top:1px solid var(--border);}
+.chat-input{flex:1;background:transparent;border:none;color:var(--text);padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;}
+.chat-input::placeholder{color:var(--muted);}
+.chat-send{background:var(--yellow);border:none;width:44px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.chat-send:hover{background:var(--yellow2);}
+.typing{display:flex;gap:4px;align-items:center;}
+.typing span{width:6px;height:6px;background:var(--muted);border-radius:50%;animation:bounce 1.2s infinite;}
+.typing span:nth-child(2){animation-delay:0.2s;}
+.typing span:nth-child(3){animation-delay:0.4s;}
+@keyframes bounce{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-6px);}}
+@media(max-width:900px){nav{padding:0 20px;}.nav-links{display:none;}.hero{padding:100px 20px 60px;}.hero-right{display:none;}section{padding:60px 20px;}.emergency{padding:14px 20px;}.process-grid{grid-template-columns:1fr 1fr;}.reviews-grid{grid-template-columns:1fr;}.cta-band{padding:48px 20px;}footer{padding:32px 20px;}.footer-inner{flex-direction:column;gap:28px;}.footer-bottom{flex-direction:column;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html"><div class="nav-logo-mark">V</div>VOLT &amp; FLOW</a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About Us</a>
+    <a href="area.html">Service Area</a>
+    <a href="booking.html">Book Now</a>
+  </div>
+  <a class="nav-cta" href="booking.html">Free Quote</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><div class="hb-dot"></div><div class="hb-text">Licensed &amp; Insured · Rockville MD</div></div>
+    <h1 class="hero-title">YOUR HOME.<br><span class="accent">FIXED</span><br><span class="italic">Fast.</span></h1>
+    <p class="hero-sub">Expert plumbing and electrical for homeowners in Rockville, Bethesda, and Potomac. Available 24/7 — we answer when others don't.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="booking.html">→ Get a Free Quote</a>
+      <a class="btn-secondary" href="tel:3015550187">📞 (301) 555-0187</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-num">24/7</div><div class="hstat-label">Emergency</div></div>
+      <div class="hstat"><div class="hstat-num">45min</div><div class="hstat-label">Response</div></div>
+      <div class="hstat"><div class="hstat-num">12yr</div><div class="hstat-label">Experience</div></div>
+      <div class="hstat"><div class="hstat-num">98%</div><div class="hstat-label">5-Star Rate</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="svc-grid">
+        <div class="svc-card"><span class="icon">🔧</span><div class="lbl">Plumbing</div></div>
+        <div class="svc-card"><span class="icon">⚡</span><div class="lbl">Electrical</div></div>
+        <div class="svc-card"><span class="icon">🚨</span><div class="lbl">Emergency</div></div>
+        <div class="svc-card"><span class="icon">🏠</span><div class="lbl">Inspections</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="emergency">
+  <div class="em-text"><div class="em-dot"></div>24/7 Emergency Line — We Answer Day or Night</div>
+  <a class="em-phone" href="tel:3015550187">(301) 555-0187</a>
+</div>
+
+<section style="background:var(--dark);">
+  <div class="section-eyebrow"><div class="se-line"></div><div class="se-text">How It Works</div></div>
+  <h2 class="section-title">Simple.<br><em>Fast. Done.</em></h2>
+  <p class="section-sub">From your first call to a finished job — built around your schedule, not ours.</p>
+  <div class="process-grid">
+    <div class="proc-step"><div class="ps-num">01</div><div class="ps-title">Call or Book Online</div><div class="ps-desc">Tell us what you need. Use the form, call, or let our AI handle it 24/7.</div></div>
+    <div class="proc-step"><div class="ps-num">02</div><div class="ps-title">Get a Flat Quote</div><div class="ps-desc">We give you a firm price before we start. No surprises — ever.</div></div>
+    <div class="proc-step"><div class="ps-num">03</div><div class="ps-title">We Show Up</div><div class="ps-desc">Licensed technician arrives in your chosen window. Same-day often available.</div></div>
+    <div class="proc-step"><div class="ps-num">04</div><div class="ps-title">Job Done Right</div><div class="ps-desc">We finish clean and back all work with a 1-year guarantee.</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-eyebrow"><div class="se-line"></div><div class="se-text">Reviews</div></div>
+  <h2 class="section-title">200+ Five-<em>Star</em> Reviews</h2>
+  <div class="reviews-grid">
+    <div class="review-card"><div class="rc-stars">★★★★★</div><div class="rc-text">"Pipe burst on a Sunday night. They were at my door in 40 minutes. Fixed it clean, no mess, fair price."</div><div class="rc-author">Marcus T.</div><div class="rc-location">Rockville, MD</div></div>
+    <div class="review-card"><div class="rc-stars">★★★★★</div><div class="rc-text">"Had them upgrade our electrical panel and add EV charging. Professional start to finish. Worth every penny."</div><div class="rc-author">Jennifer K.</div><div class="rc-location">Bethesda, MD</div></div>
+    <div class="review-card"><div class="rc-stars">★★★★★</div><div class="rc-text">"Called three plumbers — only Volt &amp; Flow picked up after 6pm. Fixed our water heater same evening."</div><div class="rc-author">David R.</div><div class="rc-location">Potomac, MD</div></div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="cta-title">Ready to Get It Fixed?</div>
+  <p class="cta-sub">Free quotes on every job. No commitment to see what it costs.</p>
+  <div class="cta-actions">
+    <a class="btn-dark" href="booking.html">→ Book a Free Quote</a>
+    <a class="btn-outline-dark" href="services.html">See All Services</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div><div class="footer-logo">Volt <span>&amp;</span> Flow</div><div class="footer-tagline">Licensed Plumbing &amp; Electrical · Rockville MD</div></div>
+    <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About Us</a><a href="area.html">Service Area</a><a href="booking.html">Book Now</a></div>
+    <div class="footer-col"><h4>Services</h4><a href="services.html">Plumbing</a><a href="services.html">Electrical</a><a href="booking.html">Emergency</a></div>
+    <div class="footer-col"><h4>Contact</h4><a href="tel:3015550187">(301) 555-0187</a><a href="mailto:hello@voltandflow.com">hello@voltandflow.com</a><a href="area.html">Rockville, MD 20850</a></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Volt &amp; Flow Home Services</div>
+    <div class="footer-credit">Website &amp; AI by <a href="https://aimplify.one">Aimplify</a></div>
+  </div>
+</footer>
+
+<div class="chat-bubble">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-head"><div class="ch-info"><div class="ch-avatar">⚡</div><div><div class="ch-name">Volt &amp; Flow AI</div><div class="ch-status">Online · Replies instantly</div></div></div><button class="ch-close" onclick="toggleChat()">✕</button></div>
+    <div class="chat-msgs" id="chatMsgs"></div>
+    <div class="chat-suggestions" id="suggestions">
+      <button class="suggestion" onclick="quickMsg('What services do you offer?')">Services</button>
+      <button class="suggestion" onclick="quickMsg('How much does it cost?')">Pricing</button>
+      <button class="suggestion" onclick="quickMsg('Emergency service?')">Emergency</button>
+      <button class="suggestion" onclick="quickMsg('What areas do you cover?')">Service area</button>
+    </div>
+    <div class="chat-input-row"><input class="chat-input" id="chatInput" placeholder="Ask us anything…" onkeydown="if(event.key==='Enter')sendMsg()"><button class="chat-send" onclick="sendMsg()">→</button></div>
+  </div>
+  <button class="chat-toggle" id="chatToggle" onclick="toggleChat()">⚡</button>
+</div>
+<script>
+let chatOpen=false;
+function toggleChat(){chatOpen=!chatOpen;document.getElementById('chatWindow').classList.toggle('open',chatOpen);document.getElementById('chatToggle').textContent=chatOpen?'✕':'⚡';if(chatOpen&&!document.getElementById('chatMsgs').children.length)setTimeout(()=>addBot("Hi! I'm the Volt & Flow assistant. How can I help you today?"),400);}
+function addMsg(t,type){const c=document.getElementById('chatMsgs');const d=document.createElement('div');d.className='msg '+type;d.textContent=t;c.appendChild(d);c.scrollTop=c.scrollHeight;}
+function addBot(t){const c=document.getElementById('chatMsgs');const tp=document.createElement('div');tp.className='msg bot typing';tp.innerHTML='<span></span><span></span><span></span>';c.appendChild(tp);c.scrollTop=c.scrollHeight;setTimeout(()=>{c.removeChild(tp);addMsg(t,'bot');},900);}
+function sendMsg(){const inp=document.getElementById('chatInput');const t=inp.value.trim();if(!t)return;addMsg(t,'user');inp.value='';document.getElementById('suggestions').style.display='none';respond(t.toLowerCase());}
+function quickMsg(t){addMsg(t,'user');document.getElementById('suggestions').style.display='none';respond(t.toLowerCase());}
+function respond(t){
+  if(t.includes('price')||t.includes('cost')||t.includes('how much'))addBot("Plumbing from $95, electrical from $110, emergency $145. All flat-rate — full price before we start, no surprises.");
+  else if(t.includes('emergency')||t.includes('urgent')||t.includes('burst'))addBot("Yes — 24/7, 45-min average response. Call (301) 555-0187 now for fastest dispatch.");
+  else if(t.includes('area')||t.includes('cover')||t.includes('rockville')||t.includes('bethesda'))addBot("We cover Rockville, Bethesda, Potomac, Gaithersburg, Silver Spring, Chevy Chase, Kensington, and more.");
+  else if(t.includes('service')||t.includes('offer'))addBot("Plumbing (leaks, drains, water heaters), electrical (outlets, panels, EV chargers, lighting), plus 24/7 emergency.");
+  else if(t.includes('book')||t.includes('schedule'))addBot("Same-day if you book before noon. Head to our booking page or call (301) 555-0187 directly.");
+  else addBot("Happy to help! Call (301) 555-0187 or use our booking form for a free quote.");
+}
+</script>
+</body>
+</html>

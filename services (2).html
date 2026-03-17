@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Volt & Flow | Rockville MD</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--black:#0a0a0a;--dark:#111;--card:#181818;--card2:#1e1e1e;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--yellow:#F5C400;--yellow2:#FFD740;--yellow-dim:rgba(245,196,0,0.12);--yellow-dim2:rgba(245,196,0,0.05);--text:#E8E4DC;--muted:#6a6560;--muted2:#3a3530;--cream:#F4F0E8;--white:#FEFCF8;}
+html{scroll-behavior:smooth;}body{background:var(--black);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;letter-spacing:0.04em;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:10px;}
+.nav-logo-mark{width:32px;height:32px;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#000;}
+.nav-links{display:flex;align-items:center;gap:28px;}.nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;transition:color 0.2s;}.nav-links a:hover,.nav-links a.active{color:var(--yellow);}
+.nav-cta{background:var(--yellow);color:#000;padding:10px 22px;font-size:13px;font-weight:700;text-decoration:none;}
+.page-hero{padding:140px 48px 72px;background:var(--dark);position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+.page-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 40px,rgba(245,196,0,0.025) 40px,rgba(245,196,0,0.025) 41px);pointer-events:none;}
+.ph-glow{position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(245,196,0,0.07) 0%,transparent 65%);pointer-events:none;}
+.ph-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:14px;position:relative;z-index:1;}
+.ph-line{width:28px;height:2px;background:var(--yellow);}.ph-tag{font-size:10px;letter-spacing:0.35em;color:var(--yellow);text-transform:uppercase;font-weight:600;}
+.ph-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,8vw,96px);font-weight:900;color:var(--white);line-height:0.92;text-transform:uppercase;margin-bottom:16px;position:relative;z-index:1;}
+.ph-title em{font-style:italic;color:var(--yellow);}.ph-sub{font-size:16px;color:var(--muted);max-width:520px;line-height:1.8;position:relative;z-index:1;}
+.emergency{background:var(--yellow);padding:14px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.em-text{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:#000;text-transform:uppercase;display:flex;align-items:center;gap:12px;}
+.em-dot{width:8px;height:8px;background:#000;border-radius:50%;animation:blink 1s infinite;}@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.em-phone{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:#000;text-decoration:none;}
+section{padding:88px 48px;}
+.se-row{display:flex;align-items:center;gap:12px;margin-bottom:14px;}.se-line{width:28px;height:2px;background:var(--yellow);}.se-text{font-size:10px;letter-spacing:0.35em;color:var(--yellow);text-transform:uppercase;font-weight:600;}
+.stitle{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,60px);font-weight:800;color:var(--white);line-height:0.95;text-transform:uppercase;margin-bottom:14px;}
+.stitle em{font-style:italic;color:var(--yellow);}.ssub{font-size:15px;color:var(--muted);max-width:480px;line-height:1.8;}
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:52px;}
+.sc{background:var(--card);border:1px solid var(--border);padding:36px 30px;position:relative;overflow:hidden;transition:border-color 0.25s,background 0.25s;}
+.sc:hover{border-color:rgba(245,196,0,0.35);background:var(--card2);}
+.sc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.sc:hover::after{transform:scaleX(1);}
+.sc-ico{font-size:36px;margin-bottom:20px;display:block;}.sc-t{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:800;color:var(--white);text-transform:uppercase;margin-bottom:10px;}
+.sc-d{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:20px;}
+.sc-li{display:flex;flex-direction:column;gap:7px;}
+.sc-i{font-size:13px;color:var(--text);display:flex;align-items:center;gap:8px;}
+.sc-i::before{content:'';width:14px;height:1px;background:var(--yellow);flex-shrink:0;}
+.sc-p{margin-top:20px;padding-top:18px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);}
+.sc-p strong{color:var(--yellow);font-size:20px;font-family:'Barlow Condensed',sans-serif;font-weight:700;}
+.gtable{width:100%;border-collapse:collapse;margin-top:48px;}
+.gtable th{background:var(--card);padding:14px 20px;font-size:10px;letter-spacing:0.2em;color:var(--yellow);text-transform:uppercase;font-weight:600;text-align:left;border-bottom:2px solid rgba(245,196,0,0.2);}
+.gtable td{padding:13px 20px;font-size:13px;border-bottom:1px solid var(--border);color:var(--text);}
+.gtable tr:hover td{background:var(--yellow-dim2);}.gtable .tp{color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;}.gtable .tn{color:var(--muted);font-size:12px;}
+.gg{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px;}
+.gc{background:var(--card);border:1px solid var(--border);padding:28px 22px;text-align:center;}
+.gc-ico{font-size:30px;margin-bottom:12px;display:block;}.gc-t{font-size:13px;font-weight:600;color:var(--white);margin-bottom:6px;}.gc-d{font-size:12px;color:var(--muted);line-height:1.6;}
+footer{background:var(--dark);border-top:1px solid var(--border);padding:48px;}
+.fi{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;margin-bottom:40px;}
+.fl{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;color:var(--white);text-transform:uppercase;margin-bottom:4px;}
+.fl span{color:var(--yellow);}.ft{font-size:12px;color:var(--muted);}
+.fc h4{font-size:10px;letter-spacing:0.2em;color:var(--muted);text-transform:uppercase;font-weight:600;margin-bottom:14px;}
+.fc a{display:block;font-size:13px;color:var(--muted);text-decoration:none;margin-bottom:8px;}.fc a:hover{color:var(--yellow);}
+.fb{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.fb div{font-size:11px;color:var(--muted2);}.fb a{color:var(--muted);text-decoration:none;}.fb a:hover{color:var(--yellow);}
+.chat-bubble{position:fixed;bottom:28px;right:28px;z-index:500;}
+.chat-toggle{width:60px;height:60px;background:var(--yellow);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 24px rgba(245,196,0,0.25);}
+.chat-window{position:absolute;bottom:72px;right:0;width:340px;background:var(--dark);border:1px solid var(--border2);display:none;flex-direction:column;overflow:hidden;}
+.chat-window.open{display:flex;}
+.chat-head{background:var(--yellow);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.ch-info{display:flex;align-items:center;gap:10px;}.ch-avatar{width:36px;height:36px;background:#000;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.ch-name{font-size:14px;font-weight:700;color:#000;}.ch-status{font-size:10px;color:rgba(0,0,0,0.6);}
+.ch-close{background:none;border:none;cursor:pointer;font-size:18px;color:#000;opacity:0.6;}
+.chat-msgs{height:280px;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;}
+.msg{max-width:82%;padding:10px 14px;font-size:13px;line-height:1.55;}
+.msg.bot{background:var(--card2);border:1px solid var(--border);color:var(--text);align-self:flex-start;}
+.msg.user{background:var(--yellow);color:#000;align-self:flex-end;font-weight:500;}
+.chat-suggestions{padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid var(--border);}
+.suggestion{background:transparent;border:1px solid var(--border2);color:var(--text);padding:5px 10px;font-size:11px;cursor:pointer;transition:all 0.2s;}
+.suggestion:hover{border-color:var(--yellow);color:var(--yellow);}
+.chat-input-row{display:flex;border-top:1px solid var(--border);}
+.chat-input{flex:1;background:transparent;border:none;color:var(--text);padding:12px 16px;font-size:13px;outline:none;}
+.chat-input::placeholder{color:var(--muted);}
+.chat-send{background:var(--yellow);border:none;width:44px;cursor:pointer;font-size:16px;}
+@keyframes bounce{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-6px);}}
+@media(max-width:900px){nav{padding:0 20px;}.nav-links{display:none;}.page-hero{padding:100px 20px 48px;}.emergency{padding:14px 20px;}section{padding:56px 20px;}.svcs{grid-template-columns:1fr;}.gg{grid-template-columns:1fr 1fr;}footer{padding:32px 20px;}.fi{flex-direction:column;gap:24px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html"><div class="nav-logo-mark">V</div>VOLT &amp; FLOW</a>
+  <div class="nav-links"><a href="index.html">Home</a><a href="services.html" class="active">Services</a><a href="about.html">About Us</a><a href="area.html">Service Area</a><a href="booking.html">Book Now</a></div>
+  <a class="nav-cta" href="booking.html">Free Quote</a>
+</nav>
+<div class="page-hero">
+  <div class="ph-glow"></div>
+  <div class="ph-eyebrow"><div class="ph-line"></div><div class="ph-tag">What We Do</div></div>
+  <h1 class="ph-title">Every Job.<br><em>Done Right.</em></h1>
+  <p class="ph-sub">Licensed technicians for every plumbing and electrical job — from a dripping faucet to a full panel upgrade.</p>
+</div>
+<div class="emergency"><div class="em-text"><div class="em-dot"></div>24/7 Emergency — 45 Minute Response</div><a class="em-phone" href="tel:3015550187">(301) 555-0187</a></div>
+<section>
+  <div class="se-row"><div class="se-line"></div><div class="se-text">Our Services</div></div>
+  <h2 class="stitle">Everything Your<br><em>Home Needs</em></h2>
+  <div class="svcs">
+    <div class="sc"><span class="sc-ico">🔧</span><div class="sc-t">Plumbing</div><div class="sc-d">Full-service plumbing for homes across Montgomery County. Fast, clean, guaranteed.</div><div class="sc-li"><div class="sc-i">Leak detection &amp; repair</div><div class="sc-i">Drain cleaning &amp; unclogging</div><div class="sc-i">Water heater install &amp; repair</div><div class="sc-i">Toilet, faucet &amp; fixture work</div><div class="sc-i">Pipe replacement &amp; repiping</div></div><div class="sc-p">Starting at <strong>$95</strong> · Free estimate on all jobs</div></div>
+    <div class="sc"><span class="sc-ico">⚡</span><div class="sc-t">Electrical</div><div class="sc-d">Licensed electricians for everything from a single outlet to a complete home rewire.</div><div class="sc-li"><div class="sc-i">Outlet &amp; switch replacement</div><div class="sc-i">Panel upgrades &amp; breakers</div><div class="sc-i">Ceiling fan &amp; light install</div><div class="sc-i">EV charger installation</div><div class="sc-i">Safety inspections &amp; rewiring</div></div><div class="sc-p">Starting at <strong>$110</strong> · Free estimate on all jobs</div></div>
+    <div class="sc"><span class="sc-ico">🚨</span><div class="sc-t">Emergency</div><div class="sc-d">Available 24/7 with a 45-minute average response time across our full service area.</div><div class="sc-li"><div class="sc-i">Burst &amp; frozen pipe repair</div><div class="sc-i">Flooding &amp; water damage</div><div class="sc-i">Power outages &amp; sparking</div><div class="sc-i">Gas line emergencies</div><div class="sc-i">Sewage backup</div></div><div class="sc-p">Emergency rate <strong>$145</strong> · No hidden fees</div></div>
+    <div class="sc"><span class="sc-ico">🏠</span><div class="sc-t">Home Inspections</div><div class="sc-d">Buying or selling? Full plumbing and electrical inspection before you close.</div><div class="sc-li"><div class="sc-i">Pre-purchase inspection</div><div class="sc-i">Code compliance check</div><div class="sc-i">Written report included</div><div class="sc-i">Insurance documentation</div></div><div class="sc-p">Flat rate <strong>$199</strong> · Report included</div></div>
+    <div class="sc"><span class="sc-ico">🌊</span><div class="sc-t">Water Heaters</div><div class="sc-d">Same-day water heater replacement. All major brands including tankless systems.</div><div class="sc-li"><div class="sc-i">Standard tank replacement</div><div class="sc-i">Tankless installation</div><div class="sc-i">Repair &amp; diagnostics</div><div class="sc-i">Energy-efficient upgrades</div></div><div class="sc-p">Starting at <strong>$350</strong> · Labor &amp; parts included</div></div>
+    <div class="sc"><span class="sc-ico">🔌</span><div class="sc-t">EV Charging</div><div class="sc-d">Level 2 EV charger installation for all vehicle brands. Permit-ready, code-compliant.</div><div class="sc-li"><div class="sc-i">Level 2 charger install</div><div class="sc-i">All major EV brands</div><div class="sc-i">Panel capacity check</div><div class="sc-i">Permit application handled</div></div><div class="sc-p">Starting at <strong>$450</strong> · Permit filing included</div></div>
+  </div>
+</section>
+<section style="background:var(--dark);">
+  <div class="se-row"><div class="se-line"></div><div class="se-text">Pricing Guide</div></div>
+  <h2 class="stitle">Flat-Rate<br><em>Pricing</em></h2>
+  <p class="ssub">No surprises. Every job quoted upfront before we start. These are starting rates.</p>
+  <table class="gtable">
+    <thead><tr><th>Service</th><th>Starting Price</th><th>Typical Range</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Leak repair</td><td class="tp">$95</td><td>$95–$250</td><td class="tn">Depends on access &amp; pipe type</td></tr>
+      <tr><td>Drain cleaning</td><td class="tp">$120</td><td>$120–$300</td><td class="tn">Snaking or hydro-jetting</td></tr>
+      <tr><td>Toilet repair/replace</td><td class="tp">$150</td><td>$150–$400</td><td class="tn">Parts included</td></tr>
+      <tr><td>Water heater replace</td><td class="tp">$350</td><td>$350–$900</td><td class="tn">Labor + standard tank</td></tr>
+      <tr><td>Outlet/switch replace</td><td class="tp">$110</td><td>$110–$200</td><td class="tn">Per outlet, same-day</td></tr>
+      <tr><td>Panel upgrade 100→200A</td><td class="tp">$1,200</td><td>$1,200–$2,500</td><td class="tn">Permit included</td></tr>
+      <tr><td>EV charger install</td><td class="tp">$450</td><td>$450–$900</td><td class="tn">Level 2 with permit</td></tr>
+      <tr><td>Home inspection</td><td class="tp">$199</td><td>Flat $199</td><td class="tn">Written report included</td></tr>
+      <tr><td>Emergency call</td><td class="tp">$145</td><td>$145 + service</td><td class="tn">No hidden dispatch fees</td></tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <div class="se-row"><div class="se-line"></div><div class="se-text">Our Promise</div></div>
+  <h2 class="stitle">Every Job<br><em>Guaranteed</em></h2>
+  <div class="gg">
+    <div class="gc"><span class="gc-ico">📋</span><div class="gc-t">Flat-Rate Quotes</div><div class="gc-d">Full price before we start. No hourly rates, no invoice surprises.</div></div>
+    <div class="gc"><span class="gc-ico">🏅</span><div class="gc-t">1-Year Guarantee</div><div class="gc-d">If anything fails within a year, we come back and fix it free.</div></div>
+    <div class="gc"><span class="gc-ico">🧹</span><div class="gc-t">Clean Job Site</div><div class="gc-d">We protect your floors and clean up completely before leaving.</div></div>
+    <div class="gc"><span class="gc-ico">⏱️</span><div class="gc-t">On-Time Arrival</div><div class="gc-d">We show up when we say. If we're late, we call you — always.</div></div>
+  </div>
+</section>
+<footer>
+  <div class="fi">
+    <div><div class="fl">Volt <span>&amp;</span> Flow</div><div class="ft">Licensed Plumbing &amp; Electrical · Rockville MD</div></div>
+    <div class="fc"><h4>Pages</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About Us</a><a href="area.html">Service Area</a><a href="booking.html">Book Now</a></div>
+    <div class="fc"><h4>Contact</h4><a href="tel:3015550187">(301) 555-0187</a><a href="mailto:hello@voltandflow.com">hello@voltandflow.com</a></div>
+  </div>
+  <div class="fb"><div>© 2025 Volt &amp; Flow Home Services</div><div>Website &amp; AI by <a href="https://aimplify.one">Aimplify</a></div></div>
+</footer>
+<div class="chat-bubble">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-head"><div class="ch-info"><div class="ch-avatar">⚡</div><div><div class="ch-name">Volt &amp; Flow AI</div><div class="ch-status">Online · Replies instantly</div></div></div><button class="ch-close" onclick="toggleChat()">✕</button></div>
+    <div class="chat-msgs" id="chatMsgs"></div>
+    <div class="chat-suggestions" id="sugg"><button class="suggestion" onclick="q('Plumbing prices?')">Plumbing</button><button class="suggestion" onclick="q('Electrical prices?')">Electrical</button><button class="suggestion" onclick="q('Emergency?')">Emergency</button></div>
+    <div class="chat-input-row"><input class="chat-input" id="ci" placeholder="Ask about any service…" onkeydown="if(event.key==='Enter')send()"><button class="chat-send" onclick="send()">→</button></div>
+  </div>
+  <button class="chat-toggle" id="ct" onclick="toggleChat()">⚡</button>
+</div>
+<script>
+let o=false;
+function toggleChat(){o=!o;document.getElementById('chatWindow').classList.toggle('open',o);document.getElementById('ct').textContent=o?'✕':'⚡';if(o&&!document.getElementById('chatMsgs').children.length)setTimeout(()=>bot("Hi! Ask me about any of our services or pricing."),400);}
+function msg(t,tp){const c=document.getElementById('chatMsgs');const d=document.createElement('div');d.className='msg '+tp;d.textContent=t;c.appendChild(d);c.scrollTop=c.scrollHeight;}
+function bot(t){const c=document.getElementById('chatMsgs');const tp=document.createElement('div');tp.className='msg bot';tp.textContent='...';c.appendChild(tp);c.scrollTop=c.scrollHeight;setTimeout(()=>{c.removeChild(tp);msg(t,'bot');},900);}
+function send(){const i=document.getElementById('ci');const t=i.value.trim();if(!t)return;msg(t,'user');i.value='';document.getElementById('sugg').style.display='none';r(t.toLowerCase());}
+function q(t){msg(t,'user');document.getElementById('sugg').style.display='none';r(t.toLowerCase());}
+function r(t){
+  if(t.includes('plumb')||t.includes('leak')||t.includes('drain'))bot("Plumbing starts at $95. Drain cleaning $120–$300, leak repair $95–$250, water heater $350–$900. All flat-rate.");
+  else if(t.includes('electric')||t.includes('outlet')||t.includes('panel')||t.includes('ev'))bot("Electrical starts at $110. Outlets $110–$200, panel upgrade $1,200–$2,500, EV charger $450–$900.");
+  else if(t.includes('emergency'))bot("24/7, 45-min response. $145 emergency rate. Call (301) 555-0187 now for fastest dispatch.");
+  else bot("Call us at (301) 555-0187 or book online for a free estimate on any job.");
+}
+</script>
+</body>
+</html>

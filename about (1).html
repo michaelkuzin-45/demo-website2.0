@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Volt & Flow | Rockville MD</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--black:#0a0a0a;--dark:#111;--card:#181818;--card2:#1e1e1e;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--yellow:#F5C400;--yellow2:#FFD740;--yellow-dim:rgba(245,196,0,0.12);--text:#E8E4DC;--muted:#6a6560;--muted2:#3a3530;--cream:#F4F0E8;--white:#FEFCF8;}
+html{scroll-behavior:smooth;}body{background:var(--black);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:10px;}
+.nav-logo-mark{width:32px;height:32px;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#000;}
+.nav-links{display:flex;align-items:center;gap:28px;}.nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;transition:color 0.2s;}.nav-links a:hover,.nav-links a.active{color:var(--yellow);}
+.nav-cta{background:var(--yellow);color:#000;padding:10px 22px;font-size:13px;font-weight:700;text-decoration:none;}
+.page-hero{padding:140px 48px 72px;background:var(--dark);position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+.page-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 40px,rgba(245,196,0,0.025) 40px,rgba(245,196,0,0.025) 41px);pointer-events:none;}
+.ph-glow{position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(245,196,0,0.07) 0%,transparent 65%);pointer-events:none;}
+.ph-z{position:relative;z-index:1;}
+.ph-ey{display:flex;align-items:center;gap:12px;margin-bottom:14px;}.ph-l{width:28px;height:2px;background:var(--yellow);}.ph-t{font-size:10px;letter-spacing:0.35em;color:var(--yellow);text-transform:uppercase;font-weight:600;}
+.ph-h{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,8vw,96px);font-weight:900;color:var(--white);line-height:0.92;text-transform:uppercase;margin-bottom:16px;}.ph-h em{font-style:italic;color:var(--yellow);}
+.ph-s{font-size:16px;color:var(--muted);max-width:520px;line-height:1.8;}
+.emergency{background:var(--yellow);padding:14px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.em-text{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:#000;text-transform:uppercase;display:flex;align-items:center;gap:12px;}
+.em-dot{width:8px;height:8px;background:#000;border-radius:50%;animation:blink 1s infinite;}@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.em-phone{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:#000;text-decoration:none;}
+section{padding:88px 48px;}
+.se-r{display:flex;align-items:center;gap:12px;margin-bottom:14px;}.se-l{width:28px;height:2px;background:var(--yellow);}.se-t{font-size:10px;letter-spacing:0.35em;color:var(--yellow);text-transform:uppercase;font-weight:600;}
+.sh{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,60px);font-weight:800;color:var(--white);line-height:0.95;text-transform:uppercase;margin-bottom:14px;}.sh em{font-style:italic;color:var(--yellow);}
+.ss{font-size:15px;color:var(--muted);max-width:480px;line-height:1.8;}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:52px;}
+.at p{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:20px;}.at p strong{color:var(--text);font-weight:500;}
+.ab{background:var(--card);border:1px solid var(--border);padding:40px;position:relative;overflow:hidden;}
+.ab::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(245,196,0,0.1) 0%,transparent 70%);}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:24px;}
+.sb{background:var(--card2);border:1px solid var(--border);padding:22px;text-align:center;}
+.sb-n{font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:900;color:var(--yellow);line-height:1;margin-bottom:4px;}
+.sb-l{font-size:11px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
+.cl{display:flex;flex-direction:column;gap:2px;}
+.ci{background:var(--card2);border:1px solid var(--border);padding:14px 18px;display:flex;align-items:center;gap:14px;}
+.ci-i{font-size:20px;flex-shrink:0;}.ci-t{font-size:13px;font-weight:600;color:var(--white);}.ci-s{font-size:11px;color:var(--muted);}
+.vg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px;}
+.vc{background:var(--card);border:1px solid var(--border);padding:28px;transition:all 0.2s;}.vc:hover{border-color:rgba(245,196,0,0.3);}
+.vc-i{font-size:28px;margin-bottom:14px;display:block;}.vc-t{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--white);text-transform:uppercase;margin-bottom:8px;}
+.vc-d{font-size:13px;color:var(--muted);line-height:1.7;}
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px;}
+.tc{background:var(--card);border:1px solid var(--border);padding:28px;text-align:center;}
+.tc-a{width:72px;height:72px;background:var(--yellow-dim);border:1px solid rgba(245,196,0,0.3);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 16px;}
+.tc-n{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--white);text-transform:uppercase;margin-bottom:4px;}
+.tc-r{font-size:12px;color:var(--yellow);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;}
+.tc-d{font-size:12px;color:var(--muted);line-height:1.65;}
+.btn-p{background:var(--yellow);color:#000;padding:15px 30px;font-size:14px;font-weight:700;letter-spacing:0.05em;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;}
+.btn-p:hover{background:var(--yellow2);}
+.btn-s{background:transparent;color:var(--text);padding:14px 30px;font-size:14px;font-weight:500;border:1px solid var(--border2);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all 0.2s;}
+.btn-s:hover{border-color:var(--yellow);color:var(--yellow);}
+footer{background:var(--dark);border-top:1px solid var(--border);padding:48px;}
+.fi{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;margin-bottom:40px;}
+.fl{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;color:var(--white);text-transform:uppercase;margin-bottom:4px;}.fl span{color:var(--yellow);}
+.ft{font-size:12px;color:var(--muted);}
+.fc h4{font-size:10px;letter-spacing:0.2em;color:var(--muted);text-transform:uppercase;font-weight:600;margin-bottom:14px;}
+.fc a{display:block;font-size:13px;color:var(--muted);text-decoration:none;margin-bottom:8px;}.fc a:hover{color:var(--yellow);}
+.fb{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.fb div{font-size:11px;color:var(--muted2);}.fb a{color:var(--muted);text-decoration:none;}.fb a:hover{color:var(--yellow);}
+.chat-bubble{position:fixed;bottom:28px;right:28px;z-index:500;}
+.chat-toggle{width:60px;height:60px;background:var(--yellow);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 24px rgba(245,196,0,0.25);}
+.chat-window{position:absolute;bottom:72px;right:0;width:340px;background:var(--dark);border:1px solid var(--border2);display:none;flex-direction:column;overflow:hidden;}
+.chat-window.open{display:flex;}
+.chat-head{background:var(--yellow);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.ch-info{display:flex;align-items:center;gap:10px;}.ch-av{width:36px;height:36px;background:#000;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.ch-n{font-size:14px;font-weight:700;color:#000;}.ch-st{font-size:10px;color:rgba(0,0,0,0.6);}
+.ch-cl{background:none;border:none;cursor:pointer;font-size:18px;color:#000;opacity:0.6;}
+.chat-msgs{height:280px;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;}
+.msg{max-width:82%;padding:10px 14px;font-size:13px;line-height:1.55;}
+.msg.bot{background:var(--card2);border:1px solid var(--border);color:var(--text);align-self:flex-start;}
+.msg.user{background:var(--yellow);color:#000;align-self:flex-end;font-weight:500;}
+.sugg{padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid var(--border);}
+.sg2{background:transparent;border:1px solid var(--border2);color:var(--text);padding:5px 10px;font-size:11px;cursor:pointer;transition:all 0.2s;}
+.sg2:hover{border-color:var(--yellow);color:var(--yellow);}
+.ci-row{display:flex;border-top:1px solid var(--border);}
+.ci-inp{flex:1;background:transparent;border:none;color:var(--text);padding:12px 16px;font-size:13px;outline:none;}
+.ci-inp::placeholder{color:var(--muted);}
+.ci-send{background:var(--yellow);border:none;width:44px;cursor:pointer;font-size:16px;}
+@media(max-width:900px){nav{padding:0 20px;}.nav-links{display:none;}.page-hero{padding:100px 20px 48px;}.emergency{padding:14px 20px;}section{padding:56px 20px;}.ag{grid-template-columns:1fr;gap:32px;}.vg{grid-template-columns:1fr;}.tg{grid-template-columns:1fr;}footer{padding:32px 20px;}.fi{flex-direction:column;gap:24px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html"><div class="nav-logo-mark">V</div>VOLT &amp; FLOW</a>
+  <div class="nav-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html" class="active">About Us</a><a href="area.html">Service Area</a><a href="booking.html">Book Now</a></div>
+  <a class="nav-cta" href="booking.html">Free Quote</a>
+</nav>
+<div class="page-hero">
+  <div class="ph-glow"></div>
+  <div class="ph-z">
+    <div class="ph-ey"><div class="ph-l"></div><div class="ph-t">Who We Are</div></div>
+    <h1 class="ph-h">Your Neighbors.<br><em>Your Plumbers.</em></h1>
+    <p class="ph-s">Not a franchise. Not a call center. A local team that has been fixing homes in Rockville and Montgomery County for over 12 years.</p>
+  </div>
+</div>
+<div class="emergency"><div class="em-text"><div class="em-dot"></div>24/7 Emergency Line</div><a class="em-phone" href="tel:3015550187">(301) 555-0187</a></div>
+<section>
+  <div class="ag">
+    <div class="at">
+      <div class="se-r"><div class="se-l"></div><div class="se-t">Our Story</div></div>
+      <h2 class="sh">Built on<br><em>Trust</em></h2>
+      <p>Volt &amp; Flow started in 2013 when founder <strong>Ray Deluca</strong> got tired of watching Rockville homeowners get overcharged by national chains that treated them like ticket numbers.</p>
+      <p>Ray had 8 years as a licensed plumber and brought in his friend <strong>Tony Marsh</strong>, a master electrician, to build something different — a local company where the owners show up on jobs and stand behind every repair.</p>
+      <p>Twelve years later, we've fixed over 4,000 homes across Montgomery County. We still answer our own phones. We still show up on time. We still guarantee every job.</p>
+      <p><strong>We're your neighbors.</strong> Our families live in Rockville, Bethesda, and Potomac. This community is where our kids go to school. That matters to how we do this job.</p>
+      <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a class="btn-p" href="booking.html">→ Book a Free Quote</a>
+        <a class="btn-s" href="tel:3015550187">Call Us Directly</a>
+      </div>
+    </div>
+    <div class="ab">
+      <div class="sg">
+        <div class="sb"><div class="sb-n">12</div><div class="sb-l">Years in business</div></div>
+        <div class="sb"><div class="sb-n">4K+</div><div class="sb-l">Homes served</div></div>
+        <div class="sb"><div class="sb-n">200+</div><div class="sb-l">5-star reviews</div></div>
+        <div class="sb"><div class="sb-n">24/7</div><div class="sb-l">Always available</div></div>
+      </div>
+      <div class="cl">
+        <div class="ci"><span class="ci-i">🏅</span><div><div class="ci-t">MD Master Plumber License</div><div class="ci-s">License #4821 · State of Maryland</div></div></div>
+        <div class="ci"><span class="ci-i">⚡</span><div><div class="ci-t">MD Journeyman Electrician</div><div class="ci-s">License #7304 · State of Maryland</div></div></div>
+        <div class="ci"><span class="ci-i">🛡️</span><div><div class="ci-t">$2M Liability Insurance</div><div class="ci-s">Plus worker's comp on every job</div></div></div>
+        <div class="ci"><span class="ci-i">⭐</span><div><div class="ci-t">4.9 Stars on Google</div><div class="ci-s">200+ verified customer reviews</div></div></div>
+        <div class="ci"><span class="ci-i">🤝</span><div><div class="ci-t">BBB Accredited · A+ Rating</div><div class="ci-s">Since 2015</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background:var(--dark);">
+  <div class="se-r"><div class="se-l"></div><div class="se-t">How We Work</div></div>
+  <h2 class="sh">What We<br><em>Stand For</em></h2>
+  <div class="vg">
+    <div class="vc"><span class="vc-i">💰</span><div class="vc-t">Honest Pricing</div><div class="vc-d">Flat-rate quotes before we start. No hourly billing, no surprise fees, no upselling things you don't need.</div></div>
+    <div class="vc"><span class="vc-i">⚡</span><div class="vc-t">Fast Response</div><div class="vc-d">Same-day service available. Emergency calls get a 45-minute average response across our full service area.</div></div>
+    <div class="vc"><span class="vc-i">🏅</span><div class="vc-t">Guaranteed Work</div><div class="vc-d">Every repair and install is backed by a 1-year workmanship guarantee. We fix it free if anything fails.</div></div>
+    <div class="vc"><span class="vc-i">🧹</span><div class="vc-t">Clean Job Site</div><div class="vc-d">We use drop cloths, clean up completely, and leave your home exactly as we found it.</div></div>
+    <div class="vc"><span class="vc-i">📞</span><div class="vc-t">Real People Answer</div><div class="vc-d">Call our number and a real person picks up. No voicemail mazes, no call centers, no runaround.</div></div>
+    <div class="vc"><span class="vc-i">🏠</span><div class="vc-t">Community First</div><div class="vc-d">We live and work here. Montgomery County is our community, not just our market.</div></div>
+  </div>
+</section>
+<section>
+  <div class="se-r"><div class="se-l"></div><div class="se-t">Our Team</div></div>
+  <h2 class="sh">The People<br><em>Behind the Work</em></h2>
+  <div class="tg">
+    <div class="tc"><div class="tc-a">🔧</div><div class="tc-n">Ray Deluca</div><div class="tc-r">Founder · Master Plumber</div><div class="tc-d">Licensed master plumber with 20+ years of experience. Born and raised in Rockville. Built Volt &amp; Flow because local homeowners deserved better.</div></div>
+    <div class="tc"><div class="tc-a">⚡</div><div class="tc-n">Tony Marsh</div><div class="tc-r">Co-Founder · Electrician</div><div class="tc-d">Licensed journeyman electrician. Specializes in panel upgrades, EV chargers, and whole-home rewiring. 800+ electrical projects in Montgomery County.</div></div>
+    <div class="tc"><div class="tc-a">📋</div><div class="tc-n">Sandra Kim</div><div class="tc-r">Operations Manager</div><div class="tc-d">Keeps everything running on time. Manages scheduling, customer follow-up, and makes sure every job is documented and guaranteed before it closes.</div></div>
+  </div>
+</section>
+<footer>
+  <div class="fi">
+    <div><div class="fl">Volt <span>&amp;</span> Flow</div><div class="ft">Licensed Plumbing &amp; Electrical · Rockville MD</div></div>
+    <div class="fc"><h4>Pages</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About Us</a><a href="area.html">Service Area</a><a href="booking.html">Book Now</a></div>
+    <div class="fc"><h4>Contact</h4><a href="tel:3015550187">(301) 555-0187</a><a href="mailto:hello@voltandflow.com">hello@voltandflow.com</a></div>
+  </div>
+  <div class="fb"><div>© 2025 Volt &amp; Flow Home Services</div><div>Website &amp; AI by <a href="https://aimplify.one">Aimplify</a></div></div>
+</footer>
+<div class="chat-bubble">
+  <div class="chat-window" id="cw">
+    <div class="chat-head"><div class="ch-info"><div class="ch-av">⚡</div><div><div class="ch-n">Volt &amp; Flow AI</div><div class="ch-st">Online · Replies instantly</div></div></div><button class="ch-cl" onclick="tc()">✕</button></div>
+    <div class="chat-msgs" id="cm"></div>
+    <div class="sugg" id="sg"><button class="sg2" onclick="q('Are you licensed?')">Licensing</button><button class="sg2" onclick="q('How long in business?')">Experience</button><button class="sg2" onclick="q('Book a job')">Book now</button></div>
+    <div class="ci-row"><input class="ci-inp" id="inp" placeholder="Ask us anything…" onkeydown="if(event.key==='Enter')snd()"><button class="ci-send" onclick="snd()">→</button></div>
+  </div>
+  <button class="chat-toggle" id="ct" onclick="tc()">⚡</button>
+</div>
+<script>
+let o=false;
+function tc(){o=!o;document.getElementById('cw').classList.toggle('open',o);document.getElementById('ct').textContent=o?'✕':'⚡';if(o&&!document.getElementById('cm').children.length)setTimeout(()=>bot("Hi! Questions about our team or credentials? Happy to help."),400);}
+function msg(t,tp){const c=document.getElementById('cm');const d=document.createElement('div');d.className='msg '+tp;d.textContent=t;c.appendChild(d);c.scrollTop=c.scrollHeight;}
+function bot(t){const c=document.getElementById('cm');const tp=document.createElement('div');tp.className='msg bot';tp.textContent='...';c.appendChild(tp);c.scrollTop=c.scrollHeight;setTimeout(()=>{c.removeChild(tp);msg(t,'bot');},900);}
+function snd(){const i=document.getElementById('inp');const t=i.value.trim();if(!t)return;msg(t,'user');i.value='';document.getElementById('sg').style.display='none';r(t.toLowerCase());}
+function q(t){msg(t,'user');document.getElementById('sg').style.display='none';r(t.toLowerCase());}
+function r(t){
+  if(t.includes('licens')||t.includes('insur'))bot("Yes — Maryland Master Plumber #4821 and Journeyman Electrician #7304. We carry $2M liability insurance and worker's comp on every job.");
+  else if(t.includes('long')||t.includes('experience')||t.includes('year'))bot("We've been in business since 2013 — 12+ years, 4,000+ homes across Montgomery County.");
+  else if(t.includes('book')||t.includes('quote'))bot("Head to our booking page or call (301) 555-0187 for a free estimate. Same-day often available.");
+  else bot("Happy to help! Call us at (301) 555-0187 for the fastest response.");
+}
+</script>
+</body>
+</html>
